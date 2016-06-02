@@ -2,8 +2,9 @@ log.log: src.src ./exe.exe
 	./exe.exe < $< > $@ && tail $(TAIL) $@
 C = cpp.cpp ypp.tab.cpp lex.yy.c
 H = hpp.hpp ypp.tab.hpp
+CXXFLAGS += -std=gnu++11 -D MODULE=\"$(notdir $(CURDIR))\"
 ./exe.exe: $(C) $(H)
-	$(CXX) -o $@ $(C)
+	$(CXX) $(CXXFLAGS) -o $@ $(C)
 ypp.tab.cpp: ypp.ypp
 	bison $<
 lex.yy.c: lpp.lpp
