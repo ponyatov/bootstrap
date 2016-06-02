@@ -2,5 +2,6 @@
 #include "hpp.hpp"
 %}
 %option noyywrap
+%option yylineno
 %%
 %%

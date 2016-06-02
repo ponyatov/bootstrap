@@ -1,0 +1,4 @@
+# this is line comment
+some code = 123
+.end
+must be ignored
