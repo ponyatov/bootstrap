@@ -14,6 +14,13 @@ N [0-9]+
 
 [a-zA-Z0-9_]+	TOC(Sym,SYM)		/* symbol */
 
+\(				TOC(Op,LP)			/* parens */
+\)				TOC(Op,RP)
+\[				TOC(Op,LQ)
+\]				TOC(Op,RQ)
+\{				TOC(Op,LC)
+\}				TOC(Op,RC)
+
 \=				TOC(Op,EQ)
 
 %%
