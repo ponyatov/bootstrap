@@ -3,5 +3,12 @@
 %}
 %option noyywrap
 %option yylineno
+S [+-]?
+N [0-9]+
 %%
+#[^\n]*\n		{}					/* # line comment with leading endline */
+^\.end			{yyterminate();}	/* stop lexer */
+{S}{N}\.{N}		TOC(Num,NUM)		/* floating point */
+{S}{N}			TOC(Int,NUM)		/* integer */
+[a-zA-Z0-9_]+	TOC(Sym,SYM)		/* symbol */
 %%

@@ -20,8 +20,13 @@ struct Sym {
 	virtual string dump();		// full dump
 };
 
+struct Num: Sym { Num(string); float val; };	// floating point
+struct Int: Sym { Int(string); int val; };		// integer number
+
 extern int yylex();				// lexer interface
 extern int yylineno;			// current lexer line number
+extern char* yytext;			// text matched by lexer
+#define TOC(C,X) { yylval.o = new C(yytext); return X; }
 extern int yyparse();			// parser interface
 extern void yyerror(string);	// error callback
 #include "ypp.tab.hpp"
