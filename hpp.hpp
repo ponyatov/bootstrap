@@ -17,11 +17,15 @@ struct Sym {
 	vector<Sym*> nest;			// container
 	void push(Sym*);			// add element
 	// --------------------------- dumping in string form
-	virtual string dump();		// full dump
+	virtual string tagval();	// return <tag:val> header
+	string pad(int n);			// left pad with n tabs
+	virtual string dump(int=0);	// full dump
 };
 
 struct Num: Sym { Num(string); float val; };	// floating point
 struct Int: Sym { Int(string); int val; };		// integer number
+
+struct Op: Sym { Op(string); };					// operator
 
 extern int yylex();				// lexer interface
 extern int yylineno;			// current lexer line number
