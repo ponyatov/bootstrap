@@ -1,4 +1,16 @@
-# this is line comment
-some code = 123
-.end
-must be ignored
+
+skelex = [ 					" lexical program skeleton "
+	files = [				" files will be opened in (g)vim editor "
+		src.src				" script source "
+		log.log				" run log "
+		core = [			" bI metasystem core "
+			ypp.ypp			" parser /bison/ "
+			lpp.lpp			" lexer /flex/ "
+			hpp.hpp			" headers "
+			cpp.cpp			" C++ core "
+			Makefile		" build scipts "
+		]
+	]
+	.gitignore				" file masks will be ignored in git project "
+	vim = [ sh.sh bat.bat ]	" (g)vim helpers "
+]
