@@ -1,9 +1,8 @@
-
-skelex = [ 					" lexical program skeleton "
-	files = [				" files will be opened in (g)vim editor "
+skelex = [ 					" == lexical program skeleton == "
+	files = [				" -- files will be opened in (g)vim editor -- "
 		src.src				" script source "
 		log.log				" run log "
-		core = [			" bI metasystem core "
+		core = [			" -- bI metasystem core -- "
 			ypp.ypp			" parser /bison/ "
 			lpp.lpp			" lexer /flex/ "
 			hpp.hpp			" headers "
